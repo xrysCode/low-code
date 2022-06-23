@@ -2,7 +2,11 @@
 <v-form-designer></v-form-designer>
 </template>
 
-<script setup>
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component'
+export default class DesignerTest extends Vue {
+
+}
 </script>
 
 <style lang="scss">

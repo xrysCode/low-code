@@ -5,6 +5,8 @@ import store from './store'
 // import axios from 'axios'  //如果需要axios，请引入
 import ElementPlus from 'element-plus' // 引入element-plus库
 import 'element-plus/dist/index.css' // 引入element-plus样式
+// 如果您正在使用CDN引入，请删除下面一行。
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -13,6 +15,9 @@ import VForm3 from 'vform3-builds' // 引入VForm3库
 import 'vform3-builds/dist/designer.style.css' // 引入VForm3样式
 
 const app = createApp(App)
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
 app.use(store).use(router)
 app.use(ElementPlus) // 全局注册element-plus
